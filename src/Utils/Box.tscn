@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bruknbvmk11hh"]
+
+[ext_resource type="Texture2D" uid="uid://24tg5f6w128r" path="res://asset/button/1.png" id="1_vax3v"]
+[ext_resource type="Theme" uid="uid://cubqqbq0gvwa5" path="res://asset/theme/36_bold.tres" id="2_gbkby"]
+[ext_resource type="Script" path="res://src/Utils/box.gd" id="2_stibt"]
+
+[node name="Box" type="TextureRect"]
+texture = ExtResource("1_vax3v")
+script = ExtResource("2_stibt")
+
+[node name="Number" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_gbkby")
+horizontal_alignment = 1
+vertical_alignment = 1

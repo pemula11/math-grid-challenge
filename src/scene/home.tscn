@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://co4xh40268ih1"]
+
+[ext_resource type="Texture2D" uid="uid://cby57p30ivrfd" path="res://asset/popup/title.png" id="1_023a0"]
+[ext_resource type="Script" path="res://src/scene/home.gd" id="1_hsg6h"]
+[ext_resource type="Texture2D" uid="uid://c3kkgg7miad0x" path="res://asset/button/12.png" id="2_cpf0f"]
+[ext_resource type="Theme" uid="uid://cubqqbq0gvwa5" path="res://asset/theme/36_bold.tres" id="4_5gmqy"]
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hsg6h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.112891, 0.125064, 0.202672, 1)
+
+[node name="Container" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 345.0
+offset_top = 352.0
+offset_right = -335.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+texture_normal = ExtResource("2_cpf0f")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -360.0
+offset_right = 238.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_023a0")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = 72.0
+offset_right = 143.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_cpf0f")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 46.0
+offset_right = -2.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_5gmqy")
+text = "START"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

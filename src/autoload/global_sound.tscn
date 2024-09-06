@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://02opten76pmm"]
+
+[ext_resource type="AudioStream" uid="uid://c032devl7vwp5" path="res://asset/sound/MI_SFX 01.mp3" id="1_llk22"]
+[ext_resource type="Script" path="res://src/autoload/global_sound.gd" id="1_yf2ry"]
+[ext_resource type="AudioStream" uid="uid://jca67ud03k7q" path="res://asset/sound/purchase-succesful-ingame-230550.mp3" id="2_3tetm"]
+[ext_resource type="AudioStream" uid="uid://bpwqiodw7jt1y" path="res://asset/sound/mixkit-funny-fail-low-tone-2876.wav" id="3_c828b"]
+[ext_resource type="AudioStream" uid="uid://bu5qkk8p6bp4e" path="res://asset/sound/coin-collect-retro-8-bit-sound-effect-145251.mp3" id="5_tqghx"]
+[ext_resource type="AudioStream" uid="uid://xi8pe4gtl827" path="res://asset/sound/coin-bag-pickup-drop-94617.mp3" id="6_bhgg0"]
+
+[node name="globalSound" type="Node2D"]
+script = ExtResource("1_yf2ry")
+
+[node name="snd_click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_llk22")
+
+[node name="snd_success" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3tetm")
+
+[node name="snd_gameover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_c828b")
+
+[node name="snd_pick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tqghx")
+
+[node name="snd_put" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_bhgg0")

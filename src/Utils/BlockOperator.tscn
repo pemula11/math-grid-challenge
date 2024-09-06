@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d7k1rwxjnleq"]
+
+[ext_resource type="Texture2D" uid="uid://cw7lsxe1gx4yr" path="res://asset/button/4.png" id="1_3thku"]
+[ext_resource type="Script" path="res://src/Utils/block_operator.gd" id="2_haj5l"]
+[ext_resource type="Theme" uid="uid://cubqqbq0gvwa5" path="res://asset/theme/36_bold.tres" id="3_ajjx5"]
+
+[node name="Block" type="TextureRect"]
+texture = ExtResource("1_3thku")
+script = ExtResource("2_haj5l")
+
+[node name="Number" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ajjx5")
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1

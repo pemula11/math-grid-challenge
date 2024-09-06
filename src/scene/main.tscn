@@ -1,0 +1,355 @@
+[gd_scene load_steps=14 format=3 uid="uid://glpwh6j8ct1"]
+
+[ext_resource type="PackedScene" uid="uid://lwwmd0u6xnfk" path="res://src/Utils/Block.tscn" id="1_7hc7m"]
+[ext_resource type="Script" path="res://src/scene/main.gd" id="1_qk3c0"]
+[ext_resource type="Texture2D" uid="uid://c46o2t3pw4got" path="res://asset/button/7.png" id="2_k8p3a"]
+[ext_resource type="PackedScene" uid="uid://bruknbvmk11hh" path="res://src/Utils/Box.tscn" id="2_kxxlx"]
+[ext_resource type="PackedScene" uid="uid://d7k1rwxjnleq" path="res://src/Utils/BlockOperator.tscn" id="2_lbyjk"]
+[ext_resource type="Texture2D" uid="uid://cdfj4hc4dw435" path="res://asset/button/9.png" id="3_lsf08"]
+[ext_resource type="Texture2D" uid="uid://c3kkgg7miad0x" path="res://asset/button/12.png" id="3_vntlc"]
+[ext_resource type="Texture2D" uid="uid://bjenbc3sox7ci" path="res://asset/button/10.png" id="4_44bwu"]
+[ext_resource type="Theme" uid="uid://gcvwh1erqrli" path="res://asset/theme/28_bold.tres" id="4_frge5"]
+[ext_resource type="Texture2D" uid="uid://dkv4txqwje6vq" path="res://asset/button/11.png" id="5_583hv"]
+[ext_resource type="Texture2D" uid="uid://dtkyfpvkw2yb6" path="res://asset/popup/GAME OVER.png" id="9_easq2"]
+[ext_resource type="Texture2D" uid="uid://d085wu4rxyg56" path="res://asset/button/6.png" id="9_eid8c"]
+[ext_resource type="Theme" uid="uid://cubqqbq0gvwa5" path="res://asset/theme/36_bold.tres" id="10_33k3d"]
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qk3c0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.112891, 0.125064, 0.202672, 1)
+
+[node name="Container" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(480, 720)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 405.0
+offset_right = -395.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Container"]
+visible = false
+layout_mode = 2
+color = Color(0.1795, 0.120157, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+
+[node name="CenterContainer" type="HBoxContainer" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="TextureButton" type="TextureButton" parent="Container/VBoxContainer/CenterContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_k8p3a")
+
+[node name="Control" type="Control" parent="Container/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="ToggleSound" type="TextureButton" parent="Container/VBoxContainer/CenterContainer/Control"]
+layout_mode = 2
+anchor_left = -3.7
+anchor_bottom = 0.987
+offset_top = -2.0
+offset_right = 76.0
+offset_bottom = -0.0500031
+toggle_mode = true
+texture_normal = ExtResource("3_lsf08")
+texture_pressed = ExtResource("4_44bwu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Container/VBoxContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_vntlc")
+
+[node name="lblScore" type="Label" parent="Container/VBoxContainer/CenterContainer/HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.313
+anchor_right = 1.0
+anchor_bottom = 0.673
+offset_left = 3.0
+offset_top = 0.0499954
+offset_right = 3.0
+offset_bottom = 0.0499954
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_frge5")
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Container/VBoxContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_583hv")
+
+[node name="Label" type="Label" parent="Container/VBoxContainer/CenterContainer/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.32
+anchor_right = 1.0
+anchor_bottom = 0.673
+offset_left = 44.0
+offset_bottom = 0.0499954
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_frge5")
+text = "120"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="main" type="MarginContainer" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer/main"]
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+
+[node name="VSeparator" type="MarginContainer" parent="Container/VBoxContainer/main/HBoxContainer"]
+custom_minimum_size = Vector2(250, 222)
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer/main/HBoxContainer/VSeparator"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/VBoxContainer/main/HBoxContainer/VSeparator/HBoxContainer"]
+layout_mode = 2
+
+[node name="Block" parent="Container/VBoxContainer/main/HBoxContainer/VSeparator/HBoxContainer/VBoxContainer" instance=ExtResource("1_7hc7m")]
+layout_mode = 2
+number = 4
+
+[node name="Number" parent="Container/VBoxContainer/main/HBoxContainer/VSeparator/HBoxContainer/VBoxContainer/Block" index="0"]
+text = "2"
+
+[node name="Block2" parent="Container/VBoxContainer/main/HBoxContainer/VSeparator/HBoxContainer/VBoxContainer" instance=ExtResource("1_7hc7m")]
+layout_mode = 2
+number = 5
+
+[node name="Block3" parent="Container/VBoxContainer/main/HBoxContainer/VSeparator/HBoxContainer/VBoxContainer" instance=ExtResource("1_7hc7m")]
+layout_mode = 2
+number = 2
+
+[node name="Block4" parent="Container/VBoxContainer/main/HBoxContainer/VSeparator/HBoxContainer/VBoxContainer" instance=ExtResource("1_7hc7m")]
+layout_mode = 2
+number = 8
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Container/VBoxContainer/main/HBoxContainer/VSeparator/HBoxContainer"]
+layout_mode = 2
+
+[node name="Block" parent="Container/VBoxContainer/main/HBoxContainer/VSeparator/HBoxContainer/VBoxContainer2" instance=ExtResource("2_lbyjk")]
+layout_mode = 2
+number = "-"
+
+[node name="Block3" parent="Container/VBoxContainer/main/HBoxContainer/VSeparator/HBoxContainer/VBoxContainer2" instance=ExtResource("2_lbyjk")]
+layout_mode = 2
+
+[node name="Block4" parent="Container/VBoxContainer/main/HBoxContainer/VSeparator/HBoxContainer/VBoxContainer2" instance=ExtResource("2_lbyjk")]
+layout_mode = 2
+number = "/"
+
+[node name="Block2" parent="Container/VBoxContainer/main/HBoxContainer/VSeparator/HBoxContainer/VBoxContainer2" instance=ExtResource("2_lbyjk")]
+layout_mode = 2
+number = "*"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/VBoxContainer/main/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Box" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_kxxlx")]
+layout_mode = 2
+idx = 1
+
+[node name="Box2" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_kxxlx")]
+layout_mode = 2
+type = "operator"
+idx = 2
+
+[node name="Box3" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_kxxlx")]
+layout_mode = 2
+idx = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Box" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_kxxlx")]
+layout_mode = 2
+type = "operator"
+idx = 4
+
+[node name="Box2" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_kxxlx")]
+layout_mode = 2
+type = "null"
+canDrop = false
+idx = 5
+
+[node name="Box3" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_kxxlx")]
+layout_mode = 2
+type = "operator"
+idx = 6
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Box" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_kxxlx")]
+layout_mode = 2
+idx = 7
+
+[node name="Box2" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_kxxlx")]
+layout_mode = 2
+type = "operator"
+idx = 8
+
+[node name="Box3" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_kxxlx")]
+layout_mode = 2
+idx = 9
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Box" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer/HBoxContainer4" groups=["answerBox"] instance=ExtResource("2_kxxlx")]
+layout_mode = 2
+texture = ExtResource("9_eid8c")
+canDrop = false
+idx = 1
+
+[node name="Box2" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("2_kxxlx")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+canDrop = false
+idx = -1
+
+[node name="Box3" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer/HBoxContainer4" groups=["answerBox"] instance=ExtResource("2_kxxlx")]
+layout_mode = 2
+texture = ExtResource("9_eid8c")
+canDrop = false
+idx = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Container/VBoxContainer/main/HBoxContainer"]
+layout_mode = 2
+
+[node name="Box" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer2" groups=["answerBox"] instance=ExtResource("2_kxxlx")]
+layout_mode = 2
+texture = ExtResource("9_eid8c")
+canDrop = false
+
+[node name="Box2" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer2" instance=ExtResource("2_kxxlx")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+canDrop = false
+idx = -1
+
+[node name="Box3" parent="Container/VBoxContainer/main/HBoxContainer/VBoxContainer2" groups=["answerBox"] instance=ExtResource("2_kxxlx")]
+layout_mode = 2
+texture = ExtResource("9_eid8c")
+canDrop = false
+idx = 3
+
+[node name="VSeparator2" type="MarginContainer" parent="Container/VBoxContainer/main/HBoxContainer"]
+custom_minimum_size = Vector2(50, 222)
+layout_mode = 2
+
+[node name="CenterContainer3" type="CenterContainer" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="GameOver" type="PanelContainer" parent="Container"]
+visible = false
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Container/GameOver"]
+layout_mode = 2
+texture = ExtResource("9_easq2")
+
+[node name="Label" type="Label" parent="Container/GameOver/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.232
+anchor_top = 0.349
+anchor_right = 0.758
+anchor_bottom = 0.464
+offset_left = -7.48001
+offset_top = -2.54199
+offset_right = 11.88
+offset_bottom = 6.28799
+theme = ExtResource("10_33k3d")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Container/GameOver/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.234
+anchor_top = 0.675
+anchor_right = 0.738
+anchor_bottom = 0.785
+offset_left = -12.76
+offset_top = -106.65
+offset_right = 16.68
+offset_bottom = 48.97
+texture_normal = ExtResource("3_vntlc")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Container/GameOver/TextureRect/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 80.0
+offset_right = 5.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_33k3d")
+text = "HOME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="Container/VBoxContainer/CenterContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="toggled" from="Container/VBoxContainer/CenterContainer/Control/ToggleSound" to="." method="_on_toggle_sound_toggled"]
+[connection signal="pressed" from="Container/GameOver/TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Container/VBoxContainer/main/HBoxContainer/VSeparator/HBoxContainer/VBoxContainer/Block"]

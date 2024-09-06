@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cubqqbq0gvwa5"]
+
+[ext_resource type="FontFile" uid="uid://b2fnecwkjgw4c" path="res://asset/font/Poppins-Bold.ttf" id="1_aa15u"]
+
+[resource]
+default_font = ExtResource("1_aa15u")
+default_font_size = 48
